@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e) => {
   const submitButton = form.querySelector('button[type="submit"]');
   const originalText = submitButton.textContent;
   submitButton.disabled = true;
-  submitButton.textContent = 'Registering...';
+  submitButton.textContent = 'Inscribiendo...';
 
   const formData = {
     child_name: document.getElementById('childName').value.trim(),
@@ -37,7 +37,7 @@ form.addEventListener('submit', async (e) => {
 
     if (error) throw error;
 
-    showMessage('Registration successful! We\'ll contact you soon with more details.');
+    showMessage('¡Inscripción exitosa! Nos pondremos en contacto pronto con más detalles.');
     form.reset();
 
     setTimeout(() => {
@@ -46,7 +46,7 @@ form.addEventListener('submit', async (e) => {
 
   } catch (error) {
     console.error('Registration error:', error);
-    showMessage('Registration failed. Please try again or contact us directly.', true);
+    showMessage('La inscripción falló. Por favor intenta nuevamente o contáctanos directamente.', true);
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = originalText;
